@@ -1,0 +1,15 @@
+{
+  "name": "sandbox-website-custom-code-and-testing",
+  "private": true,
+  "description": "Custom code and regression tests for the Sandbox Inc. Webflow site",
+  "scripts": {
+    "test": "playwright test",
+    "test:behaviour": "playwright test --grep-invert @visual",
+    "test:visual": "playwright test --grep @visual",
+    "baseline": "playwright test --update-snapshots",
+    "report": "playwright show-report"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.56.0"
+  }
+}

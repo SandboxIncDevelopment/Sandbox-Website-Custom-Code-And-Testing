@@ -1,0 +1,72 @@
+name: Regression tests
+
+# Run from the Actions tab: choose the site to test and whether to check it
+# against the baseline or record a new one.
+on:
+  workflow_dispatch:
+    inputs:
+      base_url:
+        description: Site to test
+        required: true
+        default: https://sb-website-2024-test.webflow.io
+      mode:
+        description: Check against the baseline, or record a new baseline
+        type: choice
+        options: [check, record-baseline]
+        default: check
+      visual:
+        description: Include full-page screenshot comparisons
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: regression-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      BASE_URL: ${{ inputs.base_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+
+      - name: Run tests
+        run: |
+          ARGS=""
+          if [ "${{ inputs.mode }}" = "record-baseline" ]; then ARGS="$ARGS --update-snapshots"; fi
+          if [ "${{ inputs.visual }}" != "true" ]; then ARGS="$ARGS --grep-invert @visual"; fi
+          npx playwright test $ARGS
+
+      - name: Save the new baseline to the repository
+        if: ${{ success() && inputs.mode == 'record-baseline' }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add baseline
+          if git diff --cached --quiet; then
+            echo "Baseline unchanged."
+          else
+            git commit -m "Record regression baseline from $BASE_URL"
+            git push
+          fi
+
+      - name: Upload report
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report
+          path: |
+            playwright-report
+            test-results
+          retention-days: 30
