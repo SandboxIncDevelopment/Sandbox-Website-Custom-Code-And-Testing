@@ -3,13 +3,15 @@
   "private": true,
   "description": "Custom code and regression tests for the Sandbox Inc. Webflow site",
   "scripts": {
-    "test": "playwright test",
-    "test:behaviour": "playwright test --grep-invert @visual",
+    "test": "playwright test --grep-invert @a11y",
+    "test:behaviour": "playwright test --grep-invert \"@visual|@a11y\"",
     "test:visual": "playwright test --grep @visual",
-    "baseline": "playwright test --update-snapshots",
-    "report": "playwright show-report"
+    "baseline": "playwright test --grep-invert @a11y --update-snapshots",
+    "report": "playwright show-report",
+    "test:a11y": "playwright test --grep @a11y && node scripts/a11y-report.js"
   },
   "devDependencies": {
+    "@axe-core/playwright": "^4.14.0",
     "@playwright/test": "^1.56.0"
   }
 }

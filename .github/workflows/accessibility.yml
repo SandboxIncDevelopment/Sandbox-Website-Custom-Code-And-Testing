@@ -1,0 +1,60 @@
+name: Accessibility audit
+
+# Scans a site with axe-core, walks every page with the keyboard, and saves a
+# report to reports/accessibility/<site>.md.
+on:
+  workflow_dispatch:
+    inputs:
+      base_url:
+        description: Site to audit
+        required: true
+        default: https://sb-website-2024-test.webflow.io
+
+permissions:
+  contents: write
+
+concurrency:
+  group: accessibility
+  cancel-in-progress: false
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      BASE_URL: ${{ inputs.base_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - name: Run the audit
+        run: npx playwright test --grep @a11y
+      - name: Write the report
+        if: ${{ always() }}
+        run: node scripts/a11y-report.js
+      - name: Save the report to the repository
+        if: ${{ always() }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add reports
+          if git diff --cached --quiet; then
+            echo "Report unchanged."
+          else
+            git commit -m "Accessibility audit of $BASE_URL"
+            git pull --rebase
+            git push
+          fi
+      - name: Upload raw findings
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: accessibility-findings
+          path: |
+            a11y-results
+            playwright-report
+          retention-days: 30

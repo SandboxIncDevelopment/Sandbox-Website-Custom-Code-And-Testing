@@ -45,7 +45,7 @@ jobs:
         run: |
           ARGS=""
           if [ "${{ inputs.mode }}" = "record-baseline" ]; then ARGS="$ARGS --update-snapshots"; fi
-          if [ "${{ inputs.visual }}" != "true" ]; then ARGS="$ARGS --grep-invert @visual"; fi
+          if [ "${{ inputs.visual }}" = "true" ]; then ARGS="$ARGS --grep-invert @a11y"; else ARGS="$ARGS --grep-invert @visual|@a11y"; fi
           npx playwright test $ARGS
 
       - name: Save the new baseline to the repository
