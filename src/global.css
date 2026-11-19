@@ -65,3 +65,10 @@
 /*    line-height: 1.15;  adjust if your design needs tighter/looser */
   }
 /* @endblock */
+
+/* Skip link target (accessibility, new in the repository). The main content
+   area receives focus when the skip link is used; it is not a control, so it
+   does not need a focus ring around the whole page. */
+#main:focus {
+  outline: none;
+}

@@ -142,6 +142,9 @@ embed. Four small differences:
 - Careers accordion (`shared/accordion.js`): headings announce whether their
   item is open or closed (`aria-expanded`).
 - Portfolio tabs: the selected tab is announced (`aria-current`).
+- Skip link (`global.js`, `global.css`): using "Skip to main content" moves
+  keyboard focus into the page content. Without this, Webflow scrolls to the
+  content but the next Tab lands back in the navigation.
 
 **Not yet changed (planned for v1.1.0)**
 

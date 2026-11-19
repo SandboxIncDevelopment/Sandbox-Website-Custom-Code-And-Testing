@@ -162,3 +162,20 @@
     });
   });
 /* @endblock */
+
+// Skip link (accessibility). New in the repository, not part of the original
+// inline code. Webflow scrolls to the target of an in-page link but leaves
+// keyboard focus on the link, so after "Skip to main content" the next Tab
+// would land back in the navigation. This moves focus to the main content.
+(function () {
+  document.addEventListener("click", function (event) {
+    var link = event.target.closest ? event.target.closest(".skip-link") : null;
+    if (!link) return;
+    var href = link.getAttribute("href") || "";
+    if (href.charAt(0) !== "#" || href.length < 2) return;
+    var target = document.getElementById(href.slice(1));
+    if (!target) return;
+    target.setAttribute("tabindex", "-1");
+    target.focus({ preventScroll: true });
+  });
+})();
