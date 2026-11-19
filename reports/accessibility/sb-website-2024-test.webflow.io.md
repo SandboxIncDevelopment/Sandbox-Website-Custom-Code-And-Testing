@@ -6,41 +6,16 @@ This report is produced by automated checks. They find a share of real problems,
 
 ## Summary
 
-- **WCAG 2.2 A/AA failures:** 2 rules, 26 elements.
-- **By severity:** 26 serious.
+- **WCAG 2.2 A/AA failures:** 1 rules, 1 elements.
+- **By severity:** 1 serious.
 - **Best-practice findings:** 0 rules, 0 elements.
-- **Needs a human decision:** 3 rules, 64 elements.
+- **Needs a human decision:** 4 rules, 65 elements.
 
 ## WCAG failures
 
 | Rule | Severity | WCAG | Pages | Elements |
 |---|---|---|---|---|
-| [Frames must have an accessible name](https://dequeuniversity.com/rules/axe/4.14/frame-title?application=playwright) | serious | 4.1.2 | 4 | 25 |
 | [Elements must only use permitted ARIA attributes](https://dequeuniversity.com/rules/axe/4.14/aria-prohibited-attr?application=playwright) | serious | 4.1.2 | 1 | 1 |
-
-### Frames must have an accessible name
-
-Rule `frame-title`. Pages: piece-college-toolkit, piece-cra-recruitment, piece-holodomor-mooc, piece-undp-hello-future.
-
-- **piece-college-toolkit** `.portfolio-hero-image-container > div:nth-child(2) > iframe`
-  - `<iframe src="https://player.vimeo..." frameborder="0" allow="autoplay; fullscreen..." style="position: absolute; ..." data-ready="true">`
-  - Fix any of the following: Element has no title attribute aria-label attribute does not exist or is empty aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty Element's default semantics were not overridden with role="none" or role="pre
-- **piece-college-toolkit** `#w-node-_1c72132b-9513-ebeb-134f-9d85946bf401-b6859bc6 > div:nth-child(2) > iframe`
-  - `<iframe src="https://player.vimeo.com/video/1129291612?background=1&amp;muted=1&amp;loop=1&amp;autopause=false" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" style="position: absolute;`
-  - Fix any of the following: Element has no title attribute aria-label attribute does not exist or is empty aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty Element's default semantics were not overridden with role="none" or role="pre
-- **piece-college-toolkit** `.image-block-5-video-container-background > div:nth-child(2) > iframe`
-  - `<iframe src="https://player.vimeo..." frameborder="0" allow="autoplay; fullscreen..." style="position: absolute; ..." data-ready="true">`
-  - Fix any of the following: Element has no title attribute aria-label attribute does not exist or is empty aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty Element's default semantics were not overridden with role="none" or role="pre
-- **piece-college-toolkit** `.image-block-7-video-container-background > div:nth-child(2) > iframe`
-  - `<iframe src="https://player.vimeo..." frameborder="0" allow="autoplay; fullscreen..." style="position: absolute; ..." data-ready="true">`
-  - Fix any of the following: Element has no title attribute aria-label attribute does not exist or is empty aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty Element's default semantics were not overridden with role="none" or role="pre
-- **piece-college-toolkit** `.image-block-8-video-container > div:nth-child(2) > iframe`
-  - `<iframe src="https://player.vimeo.com/video/1131418515?autoplay=1&muted=1&badge=0&autopause=0&player_id=0&app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" style="position: a`
-  - Fix any of the following: Element has no title attribute aria-label attribute does not exist or is empty aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty Element's default semantics were not overridden with role="none" or role="pre
-- **piece-cra-recruitment** `.portfolio-hero-image-container > div:nth-child(2) > iframe`
-  - `<iframe src="https://player.vimeo..." frameborder="0" allow="autoplay; fullscreen..." style="position: absolute; ..." data-ready="true">`
-  - Fix any of the following: Element has no title attribute aria-label attribute does not exist or is empty aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty Element's default semantics were not overridden with role="none" or role="pre
-- ...and 19 more.
 
 ### Elements must only use permitted ARIA attributes
 
@@ -62,8 +37,9 @@ The scanner could not tell whether these pass, most often colour contrast over a
 
 | Rule | Severity | WCAG | Pages | Elements |
 |---|---|---|---|---|
-| [Frames should be tested with axe-core](https://dequeuniversity.com/rules/axe/4.14/frame-tested?application=playwright) | critical |  | 4 | 25 |
+| [Frames should be tested with axe-core](https://dequeuniversity.com/rules/axe/4.14/frame-tested?application=playwright) | critical |  | 4 | 13 |
 | [Elements must meet minimum color contrast ratio thresholds](https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright) | serious | 1.4.3 | 5 | 37 |
+| [Frames must have a unique title attribute](https://dequeuniversity.com/rules/axe/4.14/frame-title-unique?application=playwright) | serious | 4.1.2 | 4 | 13 |
 | [Elements must only use permitted ARIA attributes](https://dequeuniversity.com/rules/axe/4.14/aria-prohibited-attr?application=playwright) | serious | 4.1.2 | 1 | 2 |
 
 ## Keyboard walk
@@ -80,10 +56,10 @@ Pressing Tab from the top of each page to the end.
 | contact | 28 | yes | yes | 0 | 0 | 0 | 0 | 0 |
 | home | 23 | yes | yes | 0 | 0 | 0 | 1 | 0 |
 | not-found | 22 | yes | yes | 0 | 0 | 0 | 0 | 0 |
-| piece-college-toolkit | 25 | yes | yes | 0 | 0 | 0 | 0 | 5 |
-| piece-cra-recruitment | 26 | yes | yes | 0 | 0 | 0 | 0 | 6 |
-| piece-holodomor-mooc | 26 | yes | yes | 0 | 0 | 0 | 0 | 6 |
-| piece-undp-hello-future | 29 | yes | yes | 0 | 0 | 0 | 0 | 8 |
+| piece-college-toolkit | 22 | yes | yes | 0 | 0 | 0 | 0 | 2 |
+| piece-cra-recruitment | 24 | yes | yes | 0 | 0 | 0 | 0 | 4 |
+| piece-holodomor-mooc | 23 | yes | yes | 0 | 0 | 0 | 0 | 3 |
+| piece-undp-hello-future | 25 | yes | yes | 0 | 0 | 0 | 0 | 4 |
 | portfolio | 84 | yes | yes | 0 | 0 | 0 | 0 | 0 |
 | privacy-policy | 20 | yes | yes | 0 | 0 | 0 | 0 | 0 |
 | terms-of-use | 20 | yes | yes | 0 | 0 | 0 | 0 | 0 |
@@ -98,10 +74,10 @@ Pressing Tab from the top of each page to the end.
 | contact | 22 | yes | yes | 0 | 0 | 0 | 0 | 0 |
 | home | 20 | yes | yes | 0 | 0 | 0 | 1 | 0 |
 | not-found | 19 | yes | yes | 0 | 0 | 0 | 0 | 0 |
-| piece-college-toolkit | 22 | yes | yes | 0 | 0 | 0 | 0 | 5 |
-| piece-cra-recruitment | 23 | yes | yes | 0 | 0 | 0 | 0 | 6 |
-| piece-holodomor-mooc | 23 | yes | yes | 0 | 0 | 0 | 0 | 6 |
-| piece-undp-hello-future | 26 | yes | yes | 0 | 0 | 0 | 0 | 8 |
+| piece-college-toolkit | 19 | yes | yes | 0 | 0 | 0 | 0 | 2 |
+| piece-cra-recruitment | 21 | yes | yes | 0 | 0 | 0 | 0 | 4 |
+| piece-holodomor-mooc | 20 | yes | yes | 0 | 0 | 0 | 0 | 3 |
+| piece-undp-hello-future | 22 | yes | yes | 0 | 0 | 0 | 0 | 4 |
 | portfolio | 81 | yes | yes | 0 | 0 | 0 | 0 | 0 |
 | privacy-policy | 17 | yes | yes | 0 | 0 | 0 | 0 | 0 |
 | terms-of-use | 17 | yes | yes | 0 | 0 | 0 | 0 | 0 |
@@ -135,9 +111,9 @@ Focusable elements smaller than 24 by 24 CSS pixels (WCAG 2.5.8).
 | Skip link moves keyboard focus into the main content | / | desktop | does not work | Press Enter on the skip link, then Tab. |
 | Accordion toggles with Enter | /careers | desktop | works | Focus an accordion heading and press the key. |
 | Accordion toggles with Space | /careers | desktop | works | Focus an accordion heading and press the key. |
-| Accordion announces open/closed state (aria-expanded) | /careers | desktop | does not work | {"role":"button","tabindex":"0","expanded":null,"controls":"lQtEeq04-va-9fnmmQvMP"} |
+| Accordion announces open/closed state (aria-expanded) | /careers | desktop | works | {"role":"button","tabindex":"0","expanded":"false","controls":"7pARaJU8faTzDjW9dCDDN"} |
 | Portfolio tab switches with Enter | /portfolio | desktop | works | Focus the second tab and press Enter. |
-| Portfolio tabs announce which one is selected | /portfolio | desktop | does not work | {"tag":"A","role":null,"selected":null,"pressed":null,"current":null} |
+| Portfolio tabs announce which one is selected | /portfolio | desktop | works | {"tag":"A","role":null,"selected":null,"pressed":null,"current":"true"} |
 | Portfolio filter options can receive keyboard focus | /portfolio?tab=service | desktop | does not work | Checks the first service filter input. |
 | History timeline can be scrolled with the keyboard | /about | desktop | works | {"scrolls":true,"tabindex":"0","focusableInside":0} |
 | Skip link is the first Tab stop | / | mobile | works | {"text":"Skip to main content","href":"#main","onScreen":true} |
@@ -145,9 +121,9 @@ Focusable elements smaller than 24 by 24 CSS pixels (WCAG 2.5.8).
 | Skip link moves keyboard focus into the main content | / | mobile | does not work | Press Enter on the skip link, then Tab. |
 | Accordion toggles with Enter | /careers | mobile | works | Focus an accordion heading and press the key. |
 | Accordion toggles with Space | /careers | mobile | works | Focus an accordion heading and press the key. |
-| Accordion announces open/closed state (aria-expanded) | /careers | mobile | does not work | {"role":"button","tabindex":"0","expanded":null,"controls":"XG23F7Zr7n8EDzybCObbH"} |
+| Accordion announces open/closed state (aria-expanded) | /careers | mobile | works | {"role":"button","tabindex":"0","expanded":"false","controls":"b2qQCYc71dO3o_dgtlLSs"} |
 | Portfolio tab switches with Enter | /portfolio | mobile | works | Focus the second tab and press Enter. |
-| Portfolio tabs announce which one is selected | /portfolio | mobile | does not work | {"tag":"A","role":null,"selected":null,"pressed":null,"current":null} |
+| Portfolio tabs announce which one is selected | /portfolio | mobile | works | {"tag":"A","role":null,"selected":null,"pressed":null,"current":"true"} |
 | Portfolio filter options can receive keyboard focus | /portfolio?tab=service | mobile | does not work | Checks the first service filter input. |
 | History timeline can be scrolled with the keyboard | /about | mobile | works | {"scrolls":true,"tabindex":"0","focusableInside":0} |
 | Mobile menu opens with Enter | / | mobile | works | Focus the menu button and press Enter. |
