@@ -41,10 +41,13 @@ for (const p of PAGES) {
   test(`${p.slug}: automated scan @a11y`, async ({ page }, testInfo) => {
     await page.goto(p.path, { waitUntil: 'load' });
     await settle(page);
-    // Third-party video players are scanned by their own vendor, not here.
+    // Scan this page only. The contents of third-party video players are
+    // their vendor's responsibility, but the <iframe> elements themselves
+    // (for example, whether each has a title) are checked.
     const results = await new AxeBuilder({ page })
       .withTags([...WCAG_TAGS, 'best-practice'])
-      .exclude('iframe')
+      .options({ iframes: false })
+      .setLegacyMode(true)
       .analyze();
     save(testInfo, 'axe', p.slug, {
       page: p.path,

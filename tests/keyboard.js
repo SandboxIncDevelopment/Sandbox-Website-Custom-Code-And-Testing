@@ -30,7 +30,7 @@ function prepare() {
     const s = getComputedStyle(el);
     if (s.cursor !== 'pointer' || !visible(el)) return;
     if (el.closest(FOCUSABLE.replace(', [tabindex]', ', [tabindex]:not([tabindex="-1"])'))) return;
-    if (el.querySelector('a[href], button, input, select, textarea')) return;
+    if (el.querySelector('a[href], button, input, select, textarea, summary, [tabindex]:not([tabindex="-1"])')) return;
     const parent = el.parentElement;
     if (parent && getComputedStyle(parent).cursor === 'pointer' && !parent.matches('body')) return; // report the outermost only
     mouseOnly.push({ element: `${el.tagName.toLowerCase()}.${(el.classList[0] || '')}`, text: label(el) });
@@ -72,7 +72,7 @@ function describeFocus() {
   const rest = window.__kbRest.get(el);
   const hasOutline = s.outlineStyle !== 'none' && parseFloat(s.outlineWidth) > 0;
   const changed = rest !== undefined && rest !== now;
-  const text = (el.getAttribute('aria-label') || el.textContent || el.getAttribute('alt') || el.getAttribute('title') || el.getAttribute('placeholder') || el.getAttribute('name') || '').replace(/\s+/g, ' ').trim().slice(0, 60);
+  const text = (el.getAttribute('aria-label') || el.textContent || el.getAttribute('alt') || el.getAttribute('title') || el.getAttribute('placeholder') || (/^(submit|button|reset)$/.test(el.type || '') ? el.value : '') || el.getAttribute('name') || '').replace(/\s+/g, ' ').trim().slice(0, 60);
   return {
     key: window.__kbSeen.get(el),
     element: `${el.tagName.toLowerCase()}${el.id ? '#' + el.id : ''}.${el.classList[0] || ''}`,
@@ -137,7 +137,7 @@ async function walk(page) {
     skipLink: !!first && /^#/.test(first.href || '') && /skip|main|content/i.test(first.text),
     noFocusIndicator: stops.filter((s) => s.visible && !s.isFrame && !s.indicator).map(name),
     focusNotVisible: stops.filter((s) => !s.visible).map(name),
-    focusCovered: stops.filter((s) => s.visible && s.covered).map(name),
+    focusCovered: stops.filter((s) => s.visible && s.covered && !s.isFrame).map(name),
     unnamed: stops.filter((s) => !s.isFrame && !s.text).map(name),
     videoFrames: stops.filter((s) => s.isFrame).length,
     smallTargets: stops.filter((s) => s.visible && !s.isFrame && (s.size[0] < 24 || s.size[1] < 24)).map((s) => `${name(s)} (${s.size[0]}x${s.size[1]})`),

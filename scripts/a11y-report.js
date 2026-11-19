@@ -128,10 +128,12 @@ for (const project of projects) {
   out();
 }
 
+// Lists findings per page. Anything found on most pages (navigation and
+// footer items) is listed once under "Every page" instead of being repeated.
 const listSection = (title, intro, field, format = (x) => code(x)) => {
   const rows = [];
   for (const { project, slug, data } of keyboard) {
-    const items = data[field] || [];
+    const items = (data[field] || []).map(format);
     if (items.length) rows.push({ project, slug, items });
   }
   if (!rows.length) return;
@@ -139,9 +141,31 @@ const listSection = (title, intro, field, format = (x) => code(x)) => {
   out();
   out(intro);
   out();
-  for (const r of rows) {
-    const shown = r.items.slice(0, 8).map(format).join(', ');
-    out(`- **${r.slug}** (${r.project}): ${shown}${r.items.length > 8 ? `, and ${r.items.length - 8} more` : ''}`);
+  const pagesPerProject = {};
+  keyboard.forEach((k) => { pagesPerProject[k.project] = (pagesPerProject[k.project] || 0) + 1; });
+  const seenOn = new Map();
+  rows.forEach((r) => new Set(r.items).forEach((item) => {
+    const key = `${r.project}\n${item}`;
+    seenOn.set(key, (seenOn.get(key) || 0) + 1);
+  }));
+  const isSiteWide = (project, item) => (seenOn.get(`${project}\n${item}`) || 0) >= Math.max(3, Math.ceil(pagesPerProject[project] * 0.7));
+  const siteWide = new Set();
+  rows.forEach((r) => r.items.forEach((item) => { if (isSiteWide(r.project, item)) siteWide.add(item); }));
+  if (siteWide.size) out(`- **Every page** (navigation and footer): ${[...siteWide].slice(0, 30).join(', ')}${siteWide.size > 30 ? `, and ${siteWide.size - 30} more` : ''}`);
+  const byPage = new Map();
+  rows.forEach((r) => {
+    const own = r.items.filter((item) => !siteWide.has(item));
+    if (!own.length) return;
+    if (!byPage.has(r.slug)) byPage.set(r.slug, new Map());
+    own.forEach((item) => {
+      const sizes = byPage.get(r.slug);
+      if (!sizes.has(item)) sizes.set(item, new Set());
+      sizes.get(item).add(r.project);
+    });
+  });
+  for (const [slug, items] of byPage) {
+    const list = [...items.entries()].map(([item, sizes]) => (sizes.size === projects.length ? item : `${item} (${[...sizes].join(', ')} only)`));
+    out(`- **${slug}**: ${list.slice(0, 10).join(', ')}${list.length > 10 ? `, and ${list.length - 10} more` : ''}`);
   }
   out();
 };
