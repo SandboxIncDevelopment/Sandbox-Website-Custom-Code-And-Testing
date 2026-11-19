@@ -74,37 +74,37 @@ Pressing Tab from the top of each page to the end.
 
 | Page | Tab stops | Reached the end | Skip link | No visible focus | Focus on hidden element | Focus covered | Mouse-only controls | Video frames in tab order |
 |---|---|---|---|---|---|---|---|---|
-| about | 19 | yes | no | 0 | 0 | 0 | 0 | 0 |
-| careers | 24 | yes | no | 0 | 0 | 0 | 0 | 0 |
-| clients | 18 | yes | no | 0 | 0 | 0 | 0 | 0 |
-| contact | 27 | yes | no | 0 | 0 | 0 | 0 | 0 |
-| home | 22 | yes | no | 0 | 0 | 0 | 1 | 0 |
-| not-found | 21 | yes | no | 0 | 0 | 0 | 0 | 0 |
-| piece-college-toolkit | 24 | yes | no | 0 | 0 | 0 | 0 | 5 |
-| piece-cra-recruitment | 25 | yes | no | 0 | 0 | 0 | 0 | 6 |
-| piece-holodomor-mooc | 25 | yes | no | 0 | 0 | 0 | 0 | 6 |
-| piece-undp-hello-future | 28 | yes | no | 0 | 0 | 0 | 0 | 8 |
-| portfolio | 83 | yes | no | 0 | 0 | 0 | 0 | 0 |
-| privacy-policy | 19 | yes | no | 0 | 0 | 0 | 0 | 0 |
-| terms-of-use | 19 | yes | no | 0 | 0 | 0 | 0 | 0 |
+| about | 20 | yes | yes | 0 | 0 | 0 | 0 | 0 |
+| careers | 25 | yes | yes | 0 | 0 | 0 | 0 | 0 |
+| clients | 19 | yes | yes | 0 | 0 | 0 | 0 | 0 |
+| contact | 28 | yes | yes | 0 | 0 | 0 | 0 | 0 |
+| home | 23 | yes | yes | 0 | 0 | 0 | 1 | 0 |
+| not-found | 22 | yes | yes | 0 | 0 | 0 | 0 | 0 |
+| piece-college-toolkit | 25 | yes | yes | 0 | 0 | 0 | 0 | 5 |
+| piece-cra-recruitment | 26 | yes | yes | 0 | 0 | 0 | 0 | 6 |
+| piece-holodomor-mooc | 26 | yes | yes | 0 | 0 | 0 | 0 | 6 |
+| piece-undp-hello-future | 29 | yes | yes | 0 | 0 | 0 | 0 | 8 |
+| portfolio | 84 | yes | yes | 0 | 0 | 0 | 0 | 0 |
+| privacy-policy | 20 | yes | yes | 0 | 0 | 0 | 0 | 0 |
+| terms-of-use | 20 | yes | yes | 0 | 0 | 0 | 0 | 0 |
 
 ### mobile
 
 | Page | Tab stops | Reached the end | Skip link | No visible focus | Focus on hidden element | Focus covered | Mouse-only controls | Video frames in tab order |
 |---|---|---|---|---|---|---|---|---|
-| about | 16 | yes | no | 0 | 0 | 0 | 0 | 0 |
-| careers | 21 | yes | no | 0 | 0 | 0 | 0 | 0 |
-| clients | 15 | yes | no | 0 | 0 | 0 | 0 | 0 |
-| contact | 21 | yes | no | 0 | 0 | 0 | 0 | 0 |
-| home | 19 | yes | no | 0 | 0 | 0 | 1 | 0 |
-| not-found | 18 | yes | no | 0 | 0 | 0 | 0 | 0 |
-| piece-college-toolkit | 21 | yes | no | 0 | 0 | 0 | 0 | 5 |
-| piece-cra-recruitment | 22 | yes | no | 0 | 0 | 0 | 0 | 6 |
-| piece-holodomor-mooc | 22 | yes | no | 0 | 0 | 0 | 0 | 6 |
-| piece-undp-hello-future | 25 | yes | no | 0 | 0 | 0 | 0 | 8 |
-| portfolio | 80 | yes | no | 0 | 0 | 0 | 0 | 0 |
-| privacy-policy | 16 | yes | no | 0 | 0 | 0 | 0 | 0 |
-| terms-of-use | 16 | yes | no | 0 | 0 | 0 | 0 | 0 |
+| about | 17 | yes | yes | 0 | 0 | 0 | 0 | 0 |
+| careers | 22 | yes | yes | 0 | 0 | 0 | 0 | 0 |
+| clients | 16 | yes | yes | 0 | 0 | 0 | 0 | 0 |
+| contact | 22 | yes | yes | 0 | 0 | 0 | 0 | 0 |
+| home | 20 | yes | yes | 0 | 0 | 0 | 1 | 0 |
+| not-found | 19 | yes | yes | 0 | 0 | 0 | 0 | 0 |
+| piece-college-toolkit | 22 | yes | yes | 0 | 0 | 0 | 0 | 5 |
+| piece-cra-recruitment | 23 | yes | yes | 0 | 0 | 0 | 0 | 6 |
+| piece-holodomor-mooc | 23 | yes | yes | 0 | 0 | 0 | 0 | 6 |
+| piece-undp-hello-future | 26 | yes | yes | 0 | 0 | 0 | 0 | 8 |
+| portfolio | 81 | yes | yes | 0 | 0 | 0 | 0 | 0 |
+| privacy-policy | 17 | yes | yes | 0 | 0 | 0 | 0 | 0 |
+| terms-of-use | 17 | yes | yes | 0 | 0 | 0 | 0 | 0 |
 
 ### Controls that only work with a mouse
 
@@ -124,22 +124,28 @@ Focusable elements smaller than 24 by 24 CSS pixels (WCAG 2.5.8).
 
 - **Language set on the page:** yes, on every page.
 - **Main landmark:** present on every page.
-- **Skip link:** none found on any page.
+- **Skip link:** present on some pages.
 
 ## Keyboard operation of widgets
 
 | Check | Page | Size | Result | Detail |
 |---|---|---|---|---|
+| Skip link is the first Tab stop | / | desktop | works | {"text":"Skip to main content","href":"#main","onScreen":true} |
+| Skip link is visible when focused | / | desktop | works | Press Tab once on a freshly loaded page. |
+| Skip link moves keyboard focus into the main content | / | desktop | does not work | Press Enter on the skip link, then Tab. |
 | Accordion toggles with Enter | /careers | desktop | works | Focus an accordion heading and press the key. |
 | Accordion toggles with Space | /careers | desktop | works | Focus an accordion heading and press the key. |
-| Accordion announces open/closed state (aria-expanded) | /careers | desktop | does not work | {"role":"button","tabindex":"0","expanded":null,"controls":"eLJY1iOyTX4IeNxI4TmPY"} |
+| Accordion announces open/closed state (aria-expanded) | /careers | desktop | does not work | {"role":"button","tabindex":"0","expanded":null,"controls":"1UdoY0TyrcQtIxsJRIdvv"} |
 | Portfolio tab switches with Enter | /portfolio | desktop | works | Focus the second tab and press Enter. |
 | Portfolio tabs announce which one is selected | /portfolio | desktop | does not work | {"tag":"A","role":null,"selected":null,"pressed":null,"current":null} |
 | Portfolio filter options can receive keyboard focus | /portfolio?tab=service | desktop | does not work | Checks the first service filter input. |
 | History timeline can be scrolled with the keyboard | /about | desktop | works | {"scrolls":true,"tabindex":"0","focusableInside":0} |
+| Skip link is the first Tab stop | / | mobile | works | {"text":"Skip to main content","href":"#main","onScreen":true} |
+| Skip link is visible when focused | / | mobile | works | Press Tab once on a freshly loaded page. |
+| Skip link moves keyboard focus into the main content | / | mobile | does not work | Press Enter on the skip link, then Tab. |
 | Accordion toggles with Enter | /careers | mobile | works | Focus an accordion heading and press the key. |
 | Accordion toggles with Space | /careers | mobile | works | Focus an accordion heading and press the key. |
-| Accordion announces open/closed state (aria-expanded) | /careers | mobile | does not work | {"role":"button","tabindex":"0","expanded":null,"controls":"hHaMZkwCnfQBcLpNRqv06"} |
+| Accordion announces open/closed state (aria-expanded) | /careers | mobile | does not work | {"role":"button","tabindex":"0","expanded":null,"controls":"sFhqpo0mcjNrIPvEpnTVr"} |
 | Portfolio tab switches with Enter | /portfolio | mobile | works | Focus the second tab and press Enter. |
 | Portfolio tabs announce which one is selected | /portfolio | mobile | does not work | {"tag":"A","role":null,"selected":null,"pressed":null,"current":null} |
 | Portfolio filter options can receive keyboard focus | /portfolio?tab=service | mobile | does not work | Checks the first service filter input. |
