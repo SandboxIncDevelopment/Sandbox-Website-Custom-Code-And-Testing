@@ -1,6 +1,8 @@
 {
   "title": "Clients",
-  "h1": [],
+  "h1": [
+    "GLOBAL impact"
+  ],
   "globals": [
     "jQuery",
     "Webflow",
