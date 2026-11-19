@@ -91,8 +91,9 @@ async function walk(page) {
   await page.evaluate(() => window.scrollTo({ top: 0, behavior: 'instant' }));
   const setup = await page.evaluate(prepare);
   // Start from the top of the document.
+  // Do not click anywhere first: a click moves the browser's tab starting
+  // point past anything above it, which would hide a skip link from the walk.
   await page.evaluate(() => { if (document.activeElement) document.activeElement.blur(); });
-  await page.mouse.click(2, 2).catch(() => {});
 
   const sequence = [];
   let lastKey = null;

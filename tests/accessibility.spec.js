@@ -72,6 +72,31 @@ test('widgets: keyboard operation @a11y', async ({ page, isMobile }, testInfo) =
   const record = (name, where, ok, detail) => checks.push({ name, where, result: ok ? 'works' : 'does not work', detail });
   const skipped = (name, where, why) => checks.push({ name, where, result: 'not checked', detail: why });
 
+  // Skip link: first Tab stop, visible when focused, and it moves to the content.
+  await page.goto('/', { waitUntil: 'load' });
+  await page.waitForTimeout(2500);
+  await page.keyboard.press('Tab');
+  await page.waitForTimeout(400);
+  const skip = await page.evaluate(() => {
+    const el = document.activeElement;
+    if (!el || el === document.body) return null;
+    const r = el.getBoundingClientRect();
+    return { text: el.textContent.trim(), href: el.getAttribute('href'), onScreen: r.top >= 0 && r.left >= 0 && r.bottom <= innerHeight && r.width > 0 };
+  });
+  const isSkip = !!skip && /skip/i.test(skip.text) && /^#/.test(skip.href || '');
+  record('Skip link is the first Tab stop', '/', isSkip, JSON.stringify(skip));
+  if (isSkip) {
+    record('Skip link is visible when focused', '/', skip.onScreen, 'Press Tab once on a freshly loaded page.');
+    await page.keyboard.press('Enter');
+    await page.waitForTimeout(400);
+    await page.keyboard.press('Tab');
+    const landed = await page.evaluate((target) => {
+      const main = document.querySelector(target);
+      return !!main && location.hash === target && main.contains(document.activeElement);
+    }, skip.href);
+    record('Skip link moves keyboard focus into the main content', '/', landed, 'Press Enter on the skip link, then Tab.');
+  }
+
   // Careers accordion: open and close with Enter and Space.
   await page.goto('/careers', { waitUntil: 'load' });
   await settle(page); // hidden until scrolled into view, and hidden elements cannot take focus
