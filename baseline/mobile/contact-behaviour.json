@@ -1,0 +1,48 @@
+{
+  "title": "Contact",
+  "h1": [
+    "Send us a message.",
+    "let’s make something together."
+  ],
+  "globals": [
+    "jQuery",
+    "Webflow",
+    "gsap",
+    "ScrollTrigger",
+    "CustomEase",
+    "SplitType"
+  ],
+  "scrollAnimations": {
+    "fade": {
+      "total": 1,
+      "revealed": 1
+    },
+    "animatedText": {
+      "total": 0,
+      "revealed": 0
+    },
+    "steps": {
+      "total": 0,
+      "revealed": 0
+    }
+  },
+  "displaySize": null,
+  "sizeSections": [],
+  "labsProject": null,
+  "labsTextColours": [],
+  "videos": [],
+  "wordCarousels": [],
+  "physicsCanvas": [],
+  "careers": null,
+  "accordion": {
+    "triggers": 0,
+    "open": 0
+  },
+  "numberCounters": [],
+  "itemCounters": [],
+  "portfolioItemsVisible": 0,
+  "portfolioTabSelected": [],
+  "contactLabsMode": [
+    false
+  ]
+}

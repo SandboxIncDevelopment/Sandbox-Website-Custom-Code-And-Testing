@@ -1,0 +1,94 @@
+{
+  "title": "CRA Recruitment Campaign",
+  "h1": [
+    "Showcasing an employer of choice"
+  ],
+  "globals": [
+    "jQuery",
+    "Webflow",
+    "gsap",
+    "ScrollTrigger",
+    "CustomEase",
+    "SplitType",
+    "Vimeo"
+  ],
+  "scrollAnimations": {
+    "fade": {
+      "total": 20,
+      "revealed": 19
+    },
+    "animatedText": {
+      "total": 1,
+      "revealed": 1
+    },
+    "steps": {
+      "total": 0,
+      "revealed": 0
+    }
+  },
+  "displaySize": "Large",
+  "sizeSections": [
+    "Extra Small | portfolio-image-grid-1 | shown",
+    "Small | portfolio-image-grid-1-top-row | shown",
+    "Small | text-section-container | shown",
+    "Large | portfolio-image-grid-2 | hidden",
+    "Large | text-section-container | hidden",
+    "Medium | portfolio-image-grid-3 | shown",
+    "Medium | text-section-container | shown"
+  ],
+  "labsProject": null,
+  "labsTextColours": [
+    "rgb(19, 24, 29)  x4",
+    "rgb(76, 238, 180)  x4"
+  ],
+  "videos": [
+    {
+      "container": "image-block-3-video-container",
+      "src": "https://player.vimeo.com/video/1049773683?background=1&muted=1&loop=1&autopause=false",
+      "wrapperStyle": "padding: 56.25% 0px 0px; position: relative;",
+      "iframeStyle": "position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;"
+    },
+    {
+      "container": "image-block-4-video-container",
+      "src": "https://player.vimeo.com/video/1049711332?autoplay=1&muted=1&badge=0&loop=1&autopause=0&player_id=0&app_id=58479",
+      "wrapperStyle": "padding: 56.25% 0px 0px; position: relative;",
+      "iframeStyle": "position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;"
+    },
+    {
+      "container": "image-block-7-video-container",
+      "src": "https://player.vimeo.com/video/1049711392?autoplay=1&muted=1&badge=0&autopause=0&player_id=0&app_id=58479",
+      "wrapperStyle": "padding: 56.25% 0px 0px; position: relative;",
+      "iframeStyle": "position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;"
+    },
+    {
+      "container": "image-block-8-video-container",
+      "src": "https://player.vimeo.com/video/1049711424?autoplay=1&muted=1&badge=0&autopause=0&player_id=0&app_id=58479",
+      "wrapperStyle": "padding: 56.25% 0px 0px; position: relative;",
+      "iframeStyle": "position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;"
+    },
+    {
+      "container": "image-block-9-video-container",
+      "src": "https://player.vimeo.com/video/1053860083?background=1&muted=1&loop=1&autopause=0",
+      "wrapperStyle": "",
+      "iframeStyle": "box-sizing: border-box; height: 28.125vw; width: 88.889vh; left: 50%; top: 50%; min-height: 100%; min-width: 100%; transform: translate(-50%, -50%); position: absolute;"
+    },
+    {
+      "container": "portfolio-hero-image-container",
+      "src": "https://player.vimeo.com/video/1049711235?autoplay=0&muted=1&badge=0&autopause=0&loop=1&player_id=0&app_id=58479",
+      "wrapperStyle": "padding: 56.25% 0px 0px; position: relative;",
+      "iframeStyle": "position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;"
+    }
+  ],
+  "wordCarousels": [],
+  "physicsCanvas": [],
+  "careers": null,
+  "accordion": {
+    "triggers": 0,
+    "open": 0
+  },
+  "numberCounters": [],
+  "itemCounters": [],
+  "portfolioItemsVisible": 0,
+  "portfolioTabSelected": [],
+  "contactLabsMode": []
+}

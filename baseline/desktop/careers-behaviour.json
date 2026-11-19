@@ -1,0 +1,45 @@
+{
+  "title": "Careers",
+  "h1": [
+    "We celebrate wins and we take stumbles in stride."
+  ],
+  "globals": [
+    "jQuery",
+    "Webflow",
+    "gsap",
+    "ScrollTrigger",
+    "CustomEase",
+    "SplitType"
+  ],
+  "scrollAnimations": {
+    "fade": {
+      "total": 14,
+      "revealed": 14
+    },
+    "animatedText": {
+      "total": 2,
+      "revealed": 2
+    },
+    "steps": {
+      "total": 0,
+      "revealed": 0
+    }
+  },
+  "displaySize": null,
+  "sizeSections": [],
+  "labsProject": null,
+  "labsTextColours": [],
+  "videos": [],
+  "wordCarousels": [],
+  "physicsCanvas": [],
+  "careers": null,
+  "accordion": {
+    "triggers": 4,
+    "open": 4
+  },
+  "numberCounters": [],
+  "itemCounters": [],
+  "portfolioItemsVisible": 0,
+  "portfolioTabSelected": [],
+  "contactLabsMode": []
+}

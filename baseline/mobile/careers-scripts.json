@@ -1,0 +1,9 @@
+[
+  "https://cdn.jsdelivr.net/npm/@finsweet/attributes-a11y@1/a11y.js",
+  "https://cdn.jsdelivr.net/npm/@finsweet/attributes-accordion@1/accordion.js",
+  "https://cdn.jsdelivr.net/npm/@finsweet/attributes-scrolldisable@1/scrolldisable.js",
+  "https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/CustomEase.min.js",
+  "https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js",
+  "https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js",
+  "https://unpkg.com/split-type"
+]

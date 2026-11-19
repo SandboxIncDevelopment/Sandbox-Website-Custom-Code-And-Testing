@@ -1,0 +1,45 @@
+{
+  "title": "Privacy Policy",
+  "h1": [
+    "PRIVACY POLICY"
+  ],
+  "globals": [
+    "jQuery",
+    "Webflow",
+    "gsap",
+    "ScrollTrigger",
+    "CustomEase",
+    "SplitType"
+  ],
+  "scrollAnimations": {
+    "fade": {
+      "total": 3,
+      "revealed": 3
+    },
+    "animatedText": {
+      "total": 0,
+      "revealed": 0
+    },
+    "steps": {
+      "total": 0,
+      "revealed": 0
+    }
+  },
+  "displaySize": null,
+  "sizeSections": [],
+  "labsProject": null,
+  "labsTextColours": [],
+  "videos": [],
+  "wordCarousels": [],
+  "physicsCanvas": [],
+  "careers": null,
+  "accordion": {
+    "triggers": 0,
+    "open": 0
+  },
+  "numberCounters": [],
+  "itemCounters": [],
+  "portfolioItemsVisible": 0,
+  "portfolioTabSelected": [],
+  "contactLabsMode": []
+}

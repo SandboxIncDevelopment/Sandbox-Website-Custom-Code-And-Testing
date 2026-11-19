@@ -1,0 +1,55 @@
+{
+  "title": "About Sandbox Inc.",
+  "h1": [
+    "We see the world through people and potential."
+  ],
+  "globals": [
+    "jQuery",
+    "Webflow",
+    "gsap",
+    "ScrollTrigger",
+    "CustomEase",
+    "SplitType",
+    "Matter"
+  ],
+  "scrollAnimations": {
+    "fade": {
+      "total": 26,
+      "revealed": 26
+    },
+    "animatedText": {
+      "total": 5,
+      "revealed": 5
+    },
+    "steps": {
+      "total": 4,
+      "revealed": 4
+    }
+  },
+  "displaySize": null,
+  "sizeSections": [],
+  "labsProject": null,
+  "labsTextColours": [],
+  "videos": [
+    {
+      "container": "code-embed-9",
+      "src": "https://player.vimeo.com/video/1164151452?background=1",
+      "wrapperStyle": "position: relative; padding-bottom: 56.3%; height: 0; overflow: hidden;",
+      "iframeStyle": "position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+    }
+  ],
+  "wordCarousels": [],
+  "physicsCanvas": [
+    "drawn"
+  ],
+  "careers": null,
+  "accordion": {
+    "triggers": 0,
+    "open": 0
+  },
+  "numberCounters": [],
+  "itemCounters": [],
+  "portfolioItemsVisible": 0,
+  "portfolioTabSelected": [],
+  "contactLabsMode": []
+}

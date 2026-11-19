@@ -1,0 +1,47 @@
+{
+  "title": "Clients",
+  "h1": [],
+  "globals": [
+    "jQuery",
+    "Webflow",
+    "gsap",
+    "ScrollTrigger",
+    "CustomEase",
+    "SplitType"
+  ],
+  "scrollAnimations": {
+    "fade": {
+      "total": 13,
+      "revealed": 13
+    },
+    "animatedText": {
+      "total": 1,
+      "revealed": 1
+    },
+    "steps": {
+      "total": 0,
+      "revealed": 0
+    }
+  },
+  "displaySize": null,
+  "sizeSections": [],
+  "labsProject": null,
+  "labsTextColours": [],
+  "videos": [],
+  "wordCarousels": [],
+  "physicsCanvas": [],
+  "careers": null,
+  "accordion": {
+    "triggers": 0,
+    "open": 0
+  },
+  "numberCounters": [
+    "150",
+    "30",
+    "400"
+  ],
+  "itemCounters": [],
+  "portfolioItemsVisible": 0,
+  "portfolioTabSelected": [],
+  "contactLabsMode": []
+}

@@ -1,0 +1,52 @@
+{
+  "title": "Not Found",
+  "h1": [
+    "404"
+  ],
+  "globals": [
+    "jQuery",
+    "Webflow",
+    "gsap",
+    "ScrollTrigger",
+    "CustomEase",
+    "SplitType"
+  ],
+  "scrollAnimations": {
+    "fade": {
+      "total": 1,
+      "revealed": 1
+    },
+    "animatedText": {
+      "total": 0,
+      "revealed": 0
+    },
+    "steps": {
+      "total": 0,
+      "revealed": 0
+    }
+  },
+  "displaySize": null,
+  "sizeSections": [],
+  "labsProject": null,
+  "labsTextColours": [],
+  "videos": [
+    {
+      "container": "w-embed",
+      "src": "https://player.vimeo.com/video/1165767996?h=f6969cfbb0&badge=0&autopause=0&&background=1&muted=1&player_id=0&app_id=58479",
+      "wrapperStyle": "",
+      "iframeStyle": "box-sizing: border-box; height: 56.25vw; width: 177.77777778vh; left: 50%; top: 50%; min-height: 100%; min-width: 100%; transform: translate(-50%, -50%); position: absolute;"
+    }
+  ],
+  "wordCarousels": [],
+  "physicsCanvas": [],
+  "careers": null,
+  "accordion": {
+    "triggers": 0,
+    "open": 0
+  },
+  "numberCounters": [],
+  "itemCounters": [],
+  "portfolioItemsVisible": 0,
+  "portfolioTabSelected": [],
+  "contactLabsMode": []
+}

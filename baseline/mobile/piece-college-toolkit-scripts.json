@@ -1,0 +1,8 @@
+[
+  "https://cdn.jsdelivr.net/npm/@finsweet/attributes-scrolldisable@1/scrolldisable.js",
+  "https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/CustomEase.min.js",
+  "https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js",
+  "https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js",
+  "https://player.vimeo.com/api/player.js  x2",
+  "https://unpkg.com/split-type"
+]
