@@ -48,6 +48,53 @@ jobs:
           if [ "${{ inputs.visual }}" = "true" ]; then ARGS="$ARGS --grep-invert @a11y"; else ARGS="$ARGS --grep-invert @visual|@a11y"; fi
           npx playwright test $ARGS
 
+      # In check mode, write a short summary of what differs and publish it,
+      # with the difference images, to the regression-results branch. That
+      # branch holds one commit, replaced on every run, so the images never
+      # pile up in the repository's history.
+      - name: Summarise the differences
+        if: ${{ always() && inputs.mode == 'check' }}
+        run: |
+          node scripts/regression-report.js
+          if [ -f regression-results/summary.md ]; then
+            SITE=$(node -p "new URL(process.env.BASE_URL).hostname")
+            sed '/^## Differences in detail/,$d' regression-results/summary.md >> "$GITHUB_STEP_SUMMARY"
+            echo "Difference images: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/blob/regression-results/$SITE/summary.md" >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: Publish the results to the regression-results branch
+        if: ${{ always() && inputs.mode == 'check' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if [ ! -f regression-results/summary.md ]; then
+            echo "No results to publish."
+            exit 0
+          fi
+          SITE=$(node -p "new URL(process.env.BASE_URL).hostname")
+          REMOTE="https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          mkdir publish
+          cd publish
+          git init -q -b regression-results
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          # Keep the latest results of any other site already on the branch.
+          if git fetch -q --depth 1 "$REMOTE" regression-results 2>/dev/null; then
+            git checkout -q FETCH_HEAD -- .
+          fi
+          rm -rf "$SITE"
+          cp -r ../regression-results "$SITE"
+          {
+            echo "# Latest regression results"
+            echo
+            echo "Written by the Regression tests workflow. This branch holds one commit, replaced on every run."
+            echo
+            for d in */; do echo "- [${d%/}](${d}summary.md)"; done
+          } > README.md
+          git add -A
+          git commit -q -m "Regression results for $BASE_URL (run $GITHUB_RUN_ID)"
+          git push -q --force "$REMOTE" HEAD:regression-results
+
       - name: Save the new baseline to the repository
         if: ${{ success() && inputs.mode == 'record-baseline' }}
         run: |

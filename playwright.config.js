@@ -15,7 +15,9 @@ module.exports = defineConfig({
   workers: process.env.CI ? 3 : undefined,
   retries: process.env.CI ? 1 : 0,
   forbidOnly: !!process.env.CI,
-  reporter: [['list'], ['html', { open: 'never' }]],
+  // The JSON report feeds scripts/regression-report.js, which writes the short
+  // results summary the workflow publishes to the regression-results branch.
+  reporter: [['list'], ['html', { open: 'never' }], ['json', { outputFile: 'regression-report.json' }]],
   use: {
     baseURL,
     trace: 'retain-on-failure',
