@@ -66,6 +66,25 @@ The tests run in GitHub Actions, so nothing needs installing.
 Each run uploads a `playwright-report` file. Download it from the run page and
 open `index.html` to see every difference side by side.
 
+### Reading the results without downloading anything
+
+Every **check** run also publishes a short summary to the
+[`regression-results`](../../tree/regression-results) branch, in a folder named
+after the site that was tested:
+
+- `summary.md` lists which pages differ from the baseline and which check
+  found the difference, then shows each one: the screenshot with the changed
+  areas highlighted, or the lines that changed in a behaviour, errors or
+  scripts file.
+- `summary.json` holds the same facts for tools.
+- `images/` and `data/` hold what the site produced on this run.
+
+The same summary, without the images, appears on the run page itself.
+
+The branch holds a single commit that is replaced on every run, so it always
+shows the latest check of each site and the images do not build up in the
+repository's history. Because this repository is public, so are these results.
+
 ### Using the suite for the migration
 
 1. **Record the baseline** against staging before changing anything.
