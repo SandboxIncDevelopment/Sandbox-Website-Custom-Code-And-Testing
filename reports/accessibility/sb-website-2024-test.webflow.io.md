@@ -108,20 +108,20 @@ Focusable elements smaller than 24 by 24 CSS pixels (WCAG 2.5.8).
 |---|---|---|---|---|
 | Skip link is the first Tab stop | / | desktop | works | {"text":"Skip to main content","href":"#main","onScreen":true} |
 | Skip link is visible when focused | / | desktop | works | Press Tab once on a freshly loaded page. |
-| Skip link moves keyboard focus into the main content | / | desktop | does not work | Press Enter on the skip link, then Tab. |
+| Skip link moves keyboard focus into the main content | / | desktop | does not work | {"afterEnter":{"focused":"main#main.","inMain":true},"afterTab":{"focused":"a.paragraph---l","inMain":false}} |
 | Accordion toggles with Enter | /careers | desktop | works | Focus an accordion heading and press the key. |
 | Accordion toggles with Space | /careers | desktop | works | Focus an accordion heading and press the key. |
-| Accordion announces open/closed state (aria-expanded) | /careers | desktop | works | {"role":"button","tabindex":"0","expanded":"false","controls":"7pARaJU8faTzDjW9dCDDN"} |
+| Accordion announces open/closed state (aria-expanded) | /careers | desktop | works | {"role":"button","tabindex":"0","expanded":"false","controls":"UjMTLuSPM_k3jUMhZ7fOy"} |
 | Portfolio tab switches with Enter | /portfolio | desktop | works | Focus the second tab and press Enter. |
 | Portfolio tabs announce which one is selected | /portfolio | desktop | works | {"tag":"A","role":null,"selected":null,"pressed":null,"current":"true"} |
 | Portfolio filter options can receive keyboard focus | /portfolio?tab=service | desktop | does not work | Checks the first service filter input. |
 | History timeline can be scrolled with the keyboard | /about | desktop | works | {"scrolls":true,"tabindex":"0","focusableInside":0} |
 | Skip link is the first Tab stop | / | mobile | works | {"text":"Skip to main content","href":"#main","onScreen":true} |
 | Skip link is visible when focused | / | mobile | works | Press Tab once on a freshly loaded page. |
-| Skip link moves keyboard focus into the main content | / | mobile | does not work | Press Enter on the skip link, then Tab. |
+| Skip link moves keyboard focus into the main content | / | mobile | does not work | {"afterEnter":{"focused":"main#main.","inMain":true},"afterTab":{"focused":"a.paragraph---l","inMain":false}} |
 | Accordion toggles with Enter | /careers | mobile | works | Focus an accordion heading and press the key. |
 | Accordion toggles with Space | /careers | mobile | works | Focus an accordion heading and press the key. |
-| Accordion announces open/closed state (aria-expanded) | /careers | mobile | works | {"role":"button","tabindex":"0","expanded":"false","controls":"b2qQCYc71dO3o_dgtlLSs"} |
+| Accordion announces open/closed state (aria-expanded) | /careers | mobile | works | {"role":"button","tabindex":"0","expanded":"false","controls":"T-I-baDINEQ67U94VUT3J"} |
 | Portfolio tab switches with Enter | /portfolio | mobile | works | Focus the second tab and press Enter. |
 | Portfolio tabs announce which one is selected | /portfolio | mobile | works | {"tag":"A","role":null,"selected":null,"pressed":null,"current":"true"} |
 | Portfolio filter options can receive keyboard focus | /portfolio?tab=service | mobile | does not work | Checks the first service filter input. |
