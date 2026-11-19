@@ -135,7 +135,7 @@ Focusable elements smaller than 24 by 24 CSS pixels (WCAG 2.5.8).
 | Skip link moves keyboard focus into the main content | / | desktop | does not work | Press Enter on the skip link, then Tab. |
 | Accordion toggles with Enter | /careers | desktop | works | Focus an accordion heading and press the key. |
 | Accordion toggles with Space | /careers | desktop | works | Focus an accordion heading and press the key. |
-| Accordion announces open/closed state (aria-expanded) | /careers | desktop | does not work | {"role":"button","tabindex":"0","expanded":null,"controls":"1UdoY0TyrcQtIxsJRIdvv"} |
+| Accordion announces open/closed state (aria-expanded) | /careers | desktop | does not work | {"role":"button","tabindex":"0","expanded":null,"controls":"lQtEeq04-va-9fnmmQvMP"} |
 | Portfolio tab switches with Enter | /portfolio | desktop | works | Focus the second tab and press Enter. |
 | Portfolio tabs announce which one is selected | /portfolio | desktop | does not work | {"tag":"A","role":null,"selected":null,"pressed":null,"current":null} |
 | Portfolio filter options can receive keyboard focus | /portfolio?tab=service | desktop | does not work | Checks the first service filter input. |
@@ -145,7 +145,7 @@ Focusable elements smaller than 24 by 24 CSS pixels (WCAG 2.5.8).
 | Skip link moves keyboard focus into the main content | / | mobile | does not work | Press Enter on the skip link, then Tab. |
 | Accordion toggles with Enter | /careers | mobile | works | Focus an accordion heading and press the key. |
 | Accordion toggles with Space | /careers | mobile | works | Focus an accordion heading and press the key. |
-| Accordion announces open/closed state (aria-expanded) | /careers | mobile | does not work | {"role":"button","tabindex":"0","expanded":null,"controls":"sFhqpo0mcjNrIPvEpnTVr"} |
+| Accordion announces open/closed state (aria-expanded) | /careers | mobile | does not work | {"role":"button","tabindex":"0","expanded":null,"controls":"XG23F7Zr7n8EDzybCObbH"} |
 | Portfolio tab switches with Enter | /portfolio | mobile | works | Focus the second tab and press Enter. |
 | Portfolio tabs announce which one is selected | /portfolio | mobile | does not work | {"tag":"A","role":null,"selected":null,"pressed":null,"current":null} |
 | Portfolio filter options can receive keyboard focus | /portfolio?tab=service | mobile | does not work | Checks the first service filter input. |
