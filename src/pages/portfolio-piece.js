@@ -62,6 +62,17 @@
     iframe.frameBorder = "0";
     iframe.allow = "autoplay; fullscreen; picture-in-picture; clipboard-write";
 
+    // Accessibility (new in the repository). Every frame gets a name. Background
+    // videos are decorative: they have no controls, so they are taken out of
+    // the keyboard tab order and hidden from screen readers.
+    if (/(^|&)background=1(&|$)/.test(slot.query)) {
+      iframe.title = "Background video";
+      iframe.tabIndex = -1;
+      iframe.setAttribute("aria-hidden", "true");
+    } else {
+      iframe.title = "Project video";
+    }
+
     if (slot.cover) {
       slot.cover.forEach(function (pair) {
         iframe.style[pair[0]] = pair[1];

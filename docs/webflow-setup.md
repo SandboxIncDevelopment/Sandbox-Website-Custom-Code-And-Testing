@@ -58,7 +58,7 @@ line after the libraries.
 |---|---|---|
 | Home | Keep the Finsweet mirror-click tag | Delete everything (the word carousel is unused) |
 | About | `<link rel="stylesheet" href="BASE/src/pages/about.css">` | See "About footer" below |
-| Careers | Keep the Finsweet accordion tag, then `<link rel="stylesheet" href="BASE/src/shared/accordion.css">` | Delete everything (both scripts target a section that no longer exists) |
+| Careers | Keep the Finsweet accordion tag, then `<link rel="stylesheet" href="BASE/src/shared/accordion.css">` | Delete everything (both scripts target a section that no longer exists), then add `<script src="BASE/src/shared/accordion.js"></script>` |
 | Contact | `<link rel="stylesheet" href="BASE/src/pages/contact.css">` | Keep the Finsweet mirror-click tag, then `<script src="BASE/src/pages/contact.js"></script>` |
 | Clients | No change | No change (Finsweet number-count tag) |
 | Portfolio | Keep the three Finsweet tags, then `<link rel="stylesheet" href="BASE/src/pages/portfolio.css">` | `<script src="BASE/src/pages/portfolio.js"></script>` |
@@ -134,6 +134,14 @@ embed. Four small differences:
 - Blocks 3 and 11 no longer load a second copy of the Vimeo `player.js`.
 - The Block 8 background embed's "page is fully loaded" console message is
   gone.
+
+**Accessibility additions (new code, not in the inline version)**
+
+- Portfolio piece videos: every player frame gets a title. Background videos
+  are also removed from the keyboard tab order and hidden from screen readers.
+- Careers accordion (`shared/accordion.js`): headings announce whether their
+  item is open or closed (`aria-expanded`).
+- Portfolio tabs: the selected tab is announced (`aria-current`).
 
 **Not yet changed (planned for v1.1.0)**
 

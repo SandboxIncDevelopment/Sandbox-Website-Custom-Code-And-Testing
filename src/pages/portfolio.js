@@ -71,3 +71,26 @@
     }
   });
 /* @endblock */
+
+// Accessibility: tell screen readers which tab is selected by keeping
+// `aria-current` in step with the "portfolio-tab--selected" class.
+// New in the repository (not part of the original inline code).
+(function () {
+  var tabs = document.querySelectorAll(".portfolio-tab");
+  if (!tabs.length || !("MutationObserver" in window)) return;
+
+  function sync(tab) {
+    if (tab.classList.contains("portfolio-tab--selected")) tab.setAttribute("aria-current", "true");
+    else tab.removeAttribute("aria-current");
+  }
+
+  var observer = new MutationObserver(function (changes) {
+    changes.forEach(function (change) {
+      sync(change.target);
+    });
+  });
+  tabs.forEach(function (tab) {
+    sync(tab);
+    observer.observe(tab, { attributes: true, attributeFilter: ["class"] });
+  });
+})();

@@ -11,7 +11,7 @@ has version history and can be reviewed.
 | Path | Used by |
 |---|---|
 | `src/global.css`, `src/global.js` | Every page: scroll animations, portfolio display-size logic |
-| `src/shared/accordion.css` | Careers (and the Labs and Accelerator drafts later) |
+| `src/shared/accordion.css`, `src/shared/accordion.js` | Careers (and the Labs and Accelerator drafts later) |
 | `src/pages/about.*` | About: history timeline drag-scroll, physics bubbles |
 | `src/pages/contact.*` | Contact: message box auto-grow, Agency/Labs toggle |
 | `src/pages/portfolio.*` | Portfolio: filter styles, tabs, `?tab=` links |
