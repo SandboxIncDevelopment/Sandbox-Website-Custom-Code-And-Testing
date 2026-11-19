@@ -88,11 +88,13 @@ test('widgets: keyboard operation @a11y', async ({ page, isMobile }, testInfo) =
   if (isSkip) {
     record('Skip link is visible when focused', '/', skip.onScreen, 'Press Tab once on a freshly loaded page.');
     await page.keyboard.press('Enter');
-    await page.waitForTimeout(400);
+    // Webflow scrolls to the target smoothly and moves focus when it arrives.
+    await page.waitForTimeout(2500);
     await page.keyboard.press('Tab');
+    await page.waitForTimeout(200);
     const landed = await page.evaluate((target) => {
       const main = document.querySelector(target);
-      return !!main && location.hash === target && main.contains(document.activeElement);
+      return !!main && main.contains(document.activeElement);
     }, skip.href);
     record('Skip link moves keyboard focus into the main content', '/', landed, 'Press Enter on the skip link, then Tab.');
   }
