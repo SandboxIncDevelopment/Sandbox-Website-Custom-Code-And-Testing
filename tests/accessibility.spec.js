@@ -74,12 +74,13 @@ test('widgets: keyboard operation @a11y', async ({ page, isMobile }, testInfo) =
 
   // Careers accordion: open and close with Enter and Space.
   await page.goto('/careers', { waitUntil: 'load' });
-  await page.waitForTimeout(2000);
+  await settle(page); // hidden until scrolled into view, and hidden elements cannot take focus
   const triggers = page.locator('[fs-accordion-element="trigger"]');
   if ((await triggers.count()) >= 2) {
     const states = await triggers.evaluateAll((els) => els.map((e) => e.classList.contains('is-active-accordion')));
     const index = Math.max(states.indexOf(false), 0);
     const trigger = triggers.nth(index);
+    await trigger.scrollIntoViewIfNeeded();
     const isOpen = () => trigger.evaluate((e) => e.classList.contains('is-active-accordion'));
     for (const key of ['Enter', 'Space']) {
       const before = await isOpen();
@@ -101,7 +102,7 @@ test('widgets: keyboard operation @a11y', async ({ page, isMobile }, testInfo) =
 
   // Portfolio tabs: switch with Enter.
   await page.goto('/portfolio', { waitUntil: 'load' });
-  await page.waitForTimeout(2000);
+  await settle(page);
   const tabs = page.locator('.portfolio-tab');
   if ((await tabs.count()) >= 2) {
     await tabs.nth(1).focus();
