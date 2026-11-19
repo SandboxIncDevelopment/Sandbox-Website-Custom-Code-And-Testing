@@ -1,0 +1,67 @@
+/* Sandbox Inc. site-wide styles.
+   Source: Webflow Site settings > Custom code (head and footer <style> blocks).
+   Load this in the site HEAD so the hide-until-animated rule applies before
+   the page paints. */
+
+/* @block site-head-style */
+  	.h1---hero-title {
+		font-kerning: none;
+	}
+
+	.line {
+	    overflow:hidden;
+      	padding-right:2px !important;
+      padding-bottom:10px !important;
+	}
+
+	.paragraph---xl  {
+		font-kerning: none;
+	}
+  
+  [data-animate="fade"], [data-animate="animated-text"] .words, [data-animate-step] {
+  	visibility:hidden;
+  }
+  
+  .sandbox-labs-nav-button path {
+    fill: #13181D;
+  }
+  
+  @media (min-width: 1024px) {
+
+
+  .sandbox-labs-nav-button:hover path {
+    fill: white;
+  }
+
+  .sandbox-labs-nav-button:hover .outlink {
+    color: white;
+  }
+}
+
+  
+  
+/* @endblock */
+
+/* @block site-footer-style */
+  /* Prevent descenders from getting clipped by SplitType wrappers */
+  [data-animate="animated-text"] {
+    overflow: visible; /* important if a parent had overflow hidden */
+  }
+
+  /* SplitType uses these wrappers; make sure they don't clip glyphs */
+  .line {
+    overflow: hidden;
+  }
+  /*
+  .line,
+  .word {
+    overflow: hidden;
+  }
+  
+  */
+
+  /* If SplitType sets inline-block, keep it but ensure line box is generous */
+  [data-animate="animated-text"] {
+/*    line-height: 1.15;  adjust if your design needs tighter/looser */
+  }
+/* @endblock */

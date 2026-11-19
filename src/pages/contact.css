@@ -1,0 +1,25 @@
+/* Contact page styles. Source: Contact page head. */
+
+/* @block contact-style */
+	textarea.w-input {
+  	height:3.5rem
+  }
+  
+  .info-content-container--labs {
+  		background-color: #4ceeb4;
+  }
+  
+  .info-content-container--labs .info-subheading {
+  		color: #00135b;
+  }
+  
+  .info-content-container--labs .paragraph---m---lets-chat {
+  		color: #00135b;
+  }
+  
+   .info-content-container--labs .h2---orange.h2---orange---white {
+	  color: #00135b;
+  }
+  
+
+/* @endblock */

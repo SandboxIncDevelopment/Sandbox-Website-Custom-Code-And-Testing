@@ -1,0 +1,29 @@
+/* Accordion styles (Finsweet Attributes accordion).
+   Source: Careers page head. The Labs and Accelerator Program drafts use the
+   same styles and can load this file when they go live. */
+
+/* @block accordion-style */
+.accordion-arrow-icon.is-active-accordion {
+	transform: rotate(0deg);
+}
+
+.acoordion-heading-and-icon {
+	padding-bottom:0;
+}
+
+.is-active-accordion .acoordion-heading-and-icon {
+	padding-bottom:2rem;
+}
+
+.accordion-content p:last-of-type {
+  /* your styles here */
+  margin-bottom: 0;
+}
+
+@media (max-width: 991px) {
+	.is-active-accordion .acoordion-heading-and-icon {
+	padding-bottom:1.5rem;
+}
+}
+
+/* @endblock */

@@ -1,0 +1,29 @@
+/* Portfolio page styles. Source: Portfolio page head. */
+
+/* @block portfolio-style */
+	.w-richtext:before, .w-richtext:after {
+  display:contents
+  }
+  
+  .service-filter-toggle {
+  	cursor:pointer;
+  }
+  
+  .w--redirected-checked, .fs-cmsfilter_active {
+  background: #13181D;
+  border: 1px solid #13181D;
+  color:white;
+  
+  }
+  
+  .service-filter-toggle:has(.w--redirected-checked) {
+  background: #13181D;
+  border: 1px solid #13181D;
+  color:white;
+}	
+
+
+	.portfolio-item---link-block:hover .project---title {
+  	font-weight:600;
+  }
+/* @endblock */

@@ -1,0 +1,7 @@
+/* 404 page styles. Source: 404 page head. */
+
+/* @block not-found-style */
+ .standard-button-with-icon:hover path {
+	fill:white;
+}
+/* @endblock */

@@ -1,0 +1,9 @@
+/* Portfolio Pieces template styles. Source: Portfolio Pieces Template page head. */
+
+/* @block portfolio-piece-style */
+
+iframe .vp-center {
+	background:red !important;
+}
+
+/* @endblock */

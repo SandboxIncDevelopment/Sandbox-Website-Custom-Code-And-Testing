@@ -1,10 +1,33 @@
 # Sandbox Website: Custom Code and Testing
 
-Regression tests for the Sandbox Inc. Webflow site (sandboxinc.co / sandboxinc.ca).
-The site's custom code will be added to this repository later; the tests come
-first so there is a record of how the site behaves before anything moves.
+Custom code and regression tests for the Sandbox Inc. Webflow site
+(sandboxinc.co / sandboxinc.ca).
 
-## What the tests do
+## Custom code
+
+`src/` holds the site's custom CSS and JavaScript, moved out of Webflow so it
+has version history and can be reviewed.
+
+| Path | Used by |
+|---|---|
+| `src/global.css`, `src/global.js` | Every page: scroll animations, portfolio display-size logic |
+| `src/shared/accordion.css` | Careers (and the Labs and Accelerator drafts later) |
+| `src/pages/about.*` | About: history timeline drag-scroll, physics bubbles |
+| `src/pages/contact.*` | Contact: message box auto-grow, Agency/Labs toggle |
+| `src/pages/portfolio.*` | Portfolio: filter styles, tabs, `?tab=` links |
+| `src/pages/portfolio-piece.*` | Portfolio Pieces template: all Vimeo players |
+| `src/pages/job-posting.css`, `src/pages/not-found.css` | Job Postings template, 404 |
+
+**The site does not use these files yet.** The steps to switch Webflow over,
+and the list of what differs from the inline code, are in
+[`docs/webflow-setup.md`](docs/webflow-setup.md).
+
+Blocks marked `/* @block name */` are exact copies of the inline code. Keep
+them unchanged until the switch has been verified.
+
+## Regression tests
+
+### What the tests do
 
 The suite opens the site in a real browser (desktop and mobile sizes) and checks
 three things.
@@ -26,7 +49,7 @@ Pages covered: Home, About, Careers, Contact, Clients, Portfolio, Privacy Policy
 Terms of Use, the 404 page and four portfolio pieces. Draft pages are left out.
 The list is in `tests/pages.js`.
 
-## Running the tests
+### Running the tests
 
 The tests run in GitHub Actions, so nothing needs installing.
 
@@ -43,7 +66,7 @@ The tests run in GitHub Actions, so nothing needs installing.
 Each run uploads a `playwright-report` file. Download it from the run page and
 open `index.html` to see every difference side by side.
 
-## Using the suite for the migration
+### Using the suite for the migration
 
 1. **Record the baseline** against staging before changing anything.
 2. **Run a check straight away**, without changing anything. It should pass. If a
@@ -62,7 +85,7 @@ open `index.html` to see every difference side by side.
    `https://www.sandboxinc.ca`. Production needs its own baseline first if its
    content differs from staging.
 
-## Things to know
+### Things to know
 
 - **Content changes show up as differences.** Adding a portfolio piece or a job
   posting changes the baseline files. Record a new baseline after content edits.
@@ -74,7 +97,7 @@ open `index.html` to see every difference side by side.
   tested, its interaction test is skipped rather than failed. Check the skipped
   list in the report after the first run to confirm nothing important is skipped.
 
-## Running on your own computer
+### Running on your own computer
 
 Requires Node.js 20 or later.
 

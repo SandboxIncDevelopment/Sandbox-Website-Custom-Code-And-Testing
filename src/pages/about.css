@@ -1,0 +1,18 @@
+/* About page styles. Source: About page head. */
+
+/* @block about-style */
+	/* Hide scrollbar for Chrome, Safari and Opera */
+.our-history-bottom-content::-webkit-scrollbar {
+ display: none; /* For Chrome, Safari, and Opera */
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.our-history-bottom-content {
+  -ms-overflow-style: none; /* For Internet Explorer and Edge */
+  scrollbar-width: none; /* For Firefox */
+}
+
+.team-role-text p {
+margin-bottom: 1px;
+}
+/* @endblock */
