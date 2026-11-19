@@ -1,4 +1,6 @@
 [
+  "https://cdn.jsdelivr.net/gh/SandboxIncDevelopment/Sandbox-Website-Custom-Code-And-Testing@6bf8f5fbaba2b20ec1c3a81ecd01982ce29aa287/src/global.js",
+  "https://cdn.jsdelivr.net/gh/SandboxIncDevelopment/Sandbox-Website-Custom-Code-And-Testing@6bf8f5fbaba2b20ec1c3a81ecd01982ce29aa287/src/shared/accordion.js",
   "https://cdn.jsdelivr.net/npm/@finsweet/attributes-a11y@1/a11y.js",
   "https://cdn.jsdelivr.net/npm/@finsweet/attributes-accordion@1/accordion.js",
   "https://cdn.jsdelivr.net/npm/@finsweet/attributes-scrolldisable@1/scrolldisable.js",

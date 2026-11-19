@@ -1,8 +1,10 @@
 [
+  "https://cdn.jsdelivr.net/gh/SandboxIncDevelopment/Sandbox-Website-Custom-Code-And-Testing@6bf8f5fbaba2b20ec1c3a81ecd01982ce29aa287/src/global.js",
+  "https://cdn.jsdelivr.net/gh/SandboxIncDevelopment/Sandbox-Website-Custom-Code-And-Testing@6bf8f5fbaba2b20ec1c3a81ecd01982ce29aa287/src/pages/portfolio-piece.js",
   "https://cdn.jsdelivr.net/npm/@finsweet/attributes-scrolldisable@1/scrolldisable.js",
   "https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/CustomEase.min.js",
   "https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js",
   "https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js",
-  "https://player.vimeo.com/api/player.js  x2",
+  "https://player.vimeo.com/api/player.js",
   "https://unpkg.com/split-type"
 ]
