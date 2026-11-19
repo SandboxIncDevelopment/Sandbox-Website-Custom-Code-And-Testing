@@ -88,15 +88,22 @@ test('widgets: keyboard operation @a11y', async ({ page, isMobile }, testInfo) =
   if (isSkip) {
     record('Skip link is visible when focused', '/', skip.onScreen, 'Press Tab once on a freshly loaded page.');
     await page.keyboard.press('Enter');
-    // Webflow scrolls to the target smoothly and moves focus when it arrives.
+    // Webflow scrolls to the target smoothly; give it time to finish.
     await page.waitForTimeout(2500);
+    const describe = () =>
+      page.evaluate(() => {
+        const el = document.activeElement;
+        const main = document.querySelector('main');
+        return {
+          focused: el ? `${el.tagName.toLowerCase()}${el.id ? '#' + el.id : ''}.${String(el.className || '').split(' ')[0]}` : null,
+          inMain: !!main && !!el && main.contains(el),
+        };
+      });
+    const afterEnter = await describe();
     await page.keyboard.press('Tab');
-    await page.waitForTimeout(200);
-    const landed = await page.evaluate((target) => {
-      const main = document.querySelector(target);
-      return !!main && main.contains(document.activeElement);
-    }, skip.href);
-    record('Skip link moves keyboard focus into the main content', '/', landed, 'Press Enter on the skip link, then Tab.');
+    await page.waitForTimeout(300);
+    const afterTab = await describe();
+    record('Skip link moves keyboard focus into the main content', '/', afterEnter.inMain && afterTab.inMain, JSON.stringify({ afterEnter, afterTab }));
   }
 
   // Careers accordion: open and close with Enter and Space.
