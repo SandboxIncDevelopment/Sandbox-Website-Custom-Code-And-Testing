@@ -97,13 +97,17 @@ test('widgets: keyboard operation @a11y', async ({ page, isMobile }, testInfo) =
         return {
           focused: el ? `${el.tagName.toLowerCase()}${el.id ? '#' + el.id : ''}.${String(el.className || '').split(' ')[0]}` : null,
           inMain: !!main && !!el && main.contains(el),
+          inNav: !!el && !!el.closest('.w-nav'),
         };
       });
     const afterEnter = await describe();
     await page.keyboard.press('Tab');
     await page.waitForTimeout(300);
     const afterTab = await describe();
-    record('Skip link moves keyboard focus into the main content', '/', afterEnter.inMain && afterTab.inMain, JSON.stringify({ afterEnter, afterTab }));
+    // Focus should land on the main content, and the next Tab should carry on
+    // from there rather than going back into the navigation. (On a page whose
+    // content has no links, the next stop is the footer.)
+    record('Skip link moves keyboard focus past the navigation', '/', afterEnter.inMain && !afterTab.inNav, JSON.stringify({ afterEnter, afterTab }));
   }
 
   // Careers accordion: open and close with Enter and Space.
