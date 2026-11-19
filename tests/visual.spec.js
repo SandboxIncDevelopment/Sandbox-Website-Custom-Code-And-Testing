@@ -1,5 +1,5 @@
 // Visual baseline: a full-page screenshot of every page once it has settled.
-// Videos, the physics canvas and the word carousel never look the same twice,
+// Videos, the physics canvas, Lottie animations and the word carousel never look the same twice,
 // so they are masked out. Run these with `npm run test:visual`.
 //
 // Screenshots only compare reliably on the machine type that made them, so
@@ -15,7 +15,7 @@ for (const p of PAGES) {
     await expect(page).toHaveScreenshot(`${p.slug}.png`, {
       fullPage: true,
       animations: 'disabled',
-      mask: [page.locator('iframe, canvas, video, .text-rotation-wrapper, [fs-numbercount-element]')],
+      mask: [page.locator('iframe, canvas, video, .text-rotation-wrapper, [fs-numbercount-element], [data-animation-type="lottie"]')],
       maxDiffPixelRatio: 0.01,
       timeout: 45_000,
     });
