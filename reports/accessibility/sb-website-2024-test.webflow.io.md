@@ -1,6 +1,6 @@
 # Accessibility audit: sb-website-2024-test.webflow.io
 
-Run 2026-11-19 against https://sb-website-2024-test.webflow.io. 13 pages, at desktop and mobile sizes.
+Run 2026-11-20 against https://sb-website-2024-test.webflow.io. 13 pages, at desktop and mobile sizes.
 
 This report is produced by automated checks. They find a share of real problems, not all of them: a screen reader pass and a human review of alt text, link wording and motion are still needed.
 
@@ -9,7 +9,7 @@ This report is produced by automated checks. They find a share of real problems,
 - **WCAG 2.2 A/AA failures:** 1 rules, 1 elements.
 - **By severity:** 1 serious.
 - **Best-practice findings:** 0 rules, 0 elements.
-- **Needs a human decision:** 4 rules, 65 elements.
+- **Needs a human decision:** 4 rules, 63 elements.
 
 ## WCAG failures
 
@@ -38,7 +38,7 @@ The scanner could not tell whether these pass, most often colour contrast over a
 | Rule | Severity | WCAG | Pages | Elements |
 |---|---|---|---|---|
 | [Frames should be tested with axe-core](https://dequeuniversity.com/rules/axe/4.14/frame-tested?application=playwright) | critical |  | 4 | 13 |
-| [Elements must meet minimum color contrast ratio thresholds](https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright) | serious | 1.4.3 | 5 | 37 |
+| [Elements must meet minimum color contrast ratio thresholds](https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright) | serious | 1.4.3 | 5 | 35 |
 | [Frames must have a unique title attribute](https://dequeuniversity.com/rules/axe/4.14/frame-title-unique?application=playwright) | serious | 4.1.2 | 4 | 13 |
 | [Elements must only use permitted ARIA attributes](https://dequeuniversity.com/rules/axe/4.14/aria-prohibited-attr?application=playwright) | serious | 4.1.2 | 1 | 2 |
 
@@ -51,7 +51,7 @@ Pressing Tab from the top of each page to the end.
 | Page | Tab stops | Reached the end | Skip link | No visible focus | Focus on hidden element | Focus covered | Mouse-only controls | Video frames in tab order |
 |---|---|---|---|---|---|---|---|---|
 | about | 20 | yes | yes | 0 | 0 | 0 | 0 | 0 |
-| careers | 25 | yes | yes | 0 | 0 | 0 | 0 | 0 |
+| careers | 24 | yes | yes | 0 | 0 | 0 | 0 | 0 |
 | clients | 19 | yes | yes | 0 | 0 | 0 | 0 | 0 |
 | contact | 28 | yes | yes | 0 | 0 | 0 | 0 | 0 |
 | home | 23 | yes | yes | 0 | 0 | 0 | 1 | 0 |
@@ -69,7 +69,7 @@ Pressing Tab from the top of each page to the end.
 | Page | Tab stops | Reached the end | Skip link | No visible focus | Focus on hidden element | Focus covered | Mouse-only controls | Video frames in tab order |
 |---|---|---|---|---|---|---|---|---|
 | about | 17 | yes | yes | 0 | 0 | 0 | 0 | 0 |
-| careers | 22 | yes | yes | 0 | 0 | 0 | 0 | 0 |
+| careers | 21 | yes | yes | 0 | 0 | 0 | 0 | 0 |
 | clients | 16 | yes | yes | 0 | 0 | 0 | 0 | 0 |
 | contact | 22 | yes | yes | 0 | 0 | 0 | 0 | 0 |
 | home | 20 | yes | yes | 0 | 0 | 0 | 1 | 0 |
@@ -111,7 +111,7 @@ Focusable elements smaller than 24 by 24 CSS pixels (WCAG 2.5.8).
 | Skip link moves keyboard focus past the navigation | / | desktop | works | {"afterEnter":{"focused":"main#main.","inMain":true,"inNav":false},"afterTab":{"focused":"a.paragraph---l","inMain":false,"inNav":false}} |
 | Accordion toggles with Enter | /careers | desktop | works | Focus an accordion heading and press the key. |
 | Accordion toggles with Space | /careers | desktop | works | Focus an accordion heading and press the key. |
-| Accordion announces open/closed state (aria-expanded) | /careers | desktop | works | {"role":"button","tabindex":"0","expanded":"false","controls":"4tLOseRzlDBwznfokORGk"} |
+| Accordion announces open/closed state (aria-expanded) | /careers | desktop | works | {"role":"button","tabindex":"0","expanded":"false","controls":"jjOrmO7V6idLxXxsAbM6c"} |
 | Portfolio tab switches with Enter | /portfolio | desktop | works | Focus the second tab and press Enter. |
 | Portfolio tabs announce which one is selected | /portfolio | desktop | works | {"tag":"A","role":null,"selected":null,"pressed":null,"current":"true"} |
 | Portfolio filter options can receive keyboard focus | /portfolio?tab=service | desktop | does not work | Checks the first service filter input. |
@@ -121,7 +121,7 @@ Focusable elements smaller than 24 by 24 CSS pixels (WCAG 2.5.8).
 | Skip link moves keyboard focus past the navigation | / | mobile | works | {"afterEnter":{"focused":"main#main.","inMain":true,"inNav":false},"afterTab":{"focused":"a.paragraph---l","inMain":false,"inNav":false}} |
 | Accordion toggles with Enter | /careers | mobile | works | Focus an accordion heading and press the key. |
 | Accordion toggles with Space | /careers | mobile | works | Focus an accordion heading and press the key. |
-| Accordion announces open/closed state (aria-expanded) | /careers | mobile | works | {"role":"button","tabindex":"0","expanded":"false","controls":"1VsPRqMjWuy4ptSCNUBI4"} |
+| Accordion announces open/closed state (aria-expanded) | /careers | mobile | works | {"role":"button","tabindex":"0","expanded":"false","controls":"m4UofuSVtkWYdB5e_qWN0"} |
 | Portfolio tab switches with Enter | /portfolio | mobile | works | Focus the second tab and press Enter. |
 | Portfolio tabs announce which one is selected | /portfolio | mobile | works | {"tag":"A","role":null,"selected":null,"pressed":null,"current":"true"} |
 | Portfolio filter options can receive keyboard focus | /portfolio?tab=service | mobile | does not work | Checks the first service filter input. |
