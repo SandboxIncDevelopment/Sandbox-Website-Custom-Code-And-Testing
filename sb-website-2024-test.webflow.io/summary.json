@@ -1,0 +1,49 @@
+{
+  "site": "sb-website-2024-test.webflow.io",
+  "baseURL": "https://sb-website-2024-test.webflow.io",
+  "date": "2026-11-20",
+  "runUrl": "https://github.com/SandboxIncDevelopment/Sandbox-Website-Custom-Code-And-Testing/actions/runs/44795622292",
+  "baselineCommit": "4159bf260b6e006a1925b4afbeca8274b6520bca",
+  "totals": {
+    "passed": 68,
+    "failed": 0,
+    "passedOnRetry": 0,
+    "skipped": 6,
+    "differences": 0,
+    "pagesWithDifferences": 0
+  },
+  "differences": [],
+  "passedOnRetry": [],
+  "skipped": [
+    {
+      "page": "",
+      "size": "desktop",
+      "check": "rotating-word carousel keeps moving"
+    },
+    {
+      "page": "",
+      "size": "mobile",
+      "check": "rotating-word carousel keeps moving"
+    },
+    {
+      "page": "",
+      "size": "mobile",
+      "check": "history timeline scrolls when dragged"
+    },
+    {
+      "page": "",
+      "size": "mobile",
+      "check": "physics bubbles are drawn"
+    },
+    {
+      "page": "",
+      "size": "desktop",
+      "check": "job postings list scrolls when dragged"
+    },
+    {
+      "page": "",
+      "size": "mobile",
+      "check": "job postings list scrolls when dragged"
+    }
+  ]
+}
